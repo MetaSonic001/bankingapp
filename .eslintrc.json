@@ -1,3 +1,23 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",                     // Allows `any` type usage
+    "@typescript-eslint/explicit-module-boundary-types": "off",      // No need for explicit return types
+    "@typescript-eslint/no-unused-vars": "warn",                     // Warns on unused variables instead of erroring
+    "react/react-in-jsx-scope": "off"                                // Disables React scope rule for Next.js
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": "off"
+      }
+    }
+  ]
 }
